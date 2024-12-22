@@ -29,7 +29,12 @@ const Register = () => {
 
         const regex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
         if (!regex.test(password)) {
-            setError('Password must have at least 1 upper case, 1 lower case and must have 6 characters long.')
+            Swal.fire({
+                title: 'Error!',
+                text: 'Password must have at least 1 upper case, 1 lower case and must have 6 characters long.',
+                icon: 'error',
+                confirmButtonText: 'Close'
+            })
             return
         }
         createNewUser(email, password)
@@ -48,7 +53,6 @@ const Register = () => {
                     })
             })
             .catch((err) => {
-                setError(err.message)
                 Swal.fire({
                     title: 'Error!',
                     text: 'There was a problem registering your account, try again.',
