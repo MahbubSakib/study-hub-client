@@ -1,7 +1,7 @@
 // import { useContext } from 'react'
 // import logo from '../assets/images/logo.png'
 // import { AuthContext } from '../providers/AuthProvider'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 const Navbar = () => {
     //   const { user, logOut } = useContext(AuthContext)
     return (
@@ -16,10 +16,10 @@ const Navbar = () => {
                 <div className='flex-none'>
                     <ul className='menu menu-horizontal px-1'>
                         <li>
-                            <Link to='/'>Home</Link>
+                            <NavLink to='/'>Home</NavLink>
                         </li>
                         <li>
-                            <Link to='/jobs'>All Jobs</Link>
+                            <NavLink to='/assignments'>Assignments</NavLink>
                         </li>
 
                         {/* {!user && (
@@ -54,7 +54,7 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52'
+                            className='menu menu-sm dropdown-content text-[#4A4A4A] mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52'
                         >
                             <li>
                                 <Link to='/add-job' className='justify-between'>
