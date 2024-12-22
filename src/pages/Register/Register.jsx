@@ -126,7 +126,7 @@ const Register = () => {
                             </div>
                             <div className="divider">OR</div>
                             <div className="mb-5">
-                                <button onClick={handleGoogleLogin} className="btn px-16 bg-blue-700 text-[#F8F8F8] hover:bg-blue-500"><FcGoogle className="text-lg" style={{ backgroundColor: 'white', borderRadius: '20%' }} /> Register with Google</button>
+                                <button type="button" onClick={handleGoogleLogin} className="btn px-16 bg-blue-700 text-[#F8F8F8] hover:bg-blue-500"><FcGoogle className="text-lg" style={{ backgroundColor: 'white', borderRadius: '20%' }} /> Register with Google</button>
                             </div>
                         </form>
 
