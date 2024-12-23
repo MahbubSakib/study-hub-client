@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import { toast } from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const AssignmentCard = ({ assignment, allAssignments }) => {
@@ -77,12 +78,12 @@ const AssignmentCard = ({ assignment, allAssignments }) => {
                         >
                             View
                         </button>
-                        <button
-                            // onClick={onUpdate}
+                        <Link
+                            to={`/assignmentUpdate/${assignment._id}`}
                             className="px-4 py-2 bg-yellow-500 text-white rounded-md hover:bg-yellow-700 font-medium transition duration-300"
                         >
                             Update
-                        </button>
+                        </Link>
                         <button
                             onClick={() => handleDelete(assignment._id)}
                             className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-700 font-medium transition duration-300"

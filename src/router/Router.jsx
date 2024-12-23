@@ -10,6 +10,7 @@ import Register from "../pages/Register/Register";
 import CreateAssignments from "../pages/CreateAssignments/CreateAssignments";
 import MyAttemptedAssignments from "../pages/MyAttemptedAssignments/MyAttemptedAssignments";
 import PrivateRoute from "./PrivateRoute";
+import AssignmentUpdate from "../pages/Assignments/AssignmentUpdate";
 
 const Router = createBrowserRouter([
     {
@@ -37,8 +38,16 @@ const Router = createBrowserRouter([
                 element: <PrivateRoute><CreateAssignments></CreateAssignments></PrivateRoute>
             },
             {
+                path: '/assignmentUpdate/:id',
+                element: <PrivateRoute><AssignmentUpdate></AssignmentUpdate></PrivateRoute>
+            },
+            {
+                path: '/update-assignments/:id',
+                element: <PrivateRoute><CreateAssignments></CreateAssignments></PrivateRoute>
+            },
+            {
                 path: '/my-attempted-assignments',
-                element: <MyAttemptedAssignments></MyAttemptedAssignments>
+                element: <PrivateRoute><MyAttemptedAssignments></MyAttemptedAssignments></PrivateRoute>
             },
         ]
     },
