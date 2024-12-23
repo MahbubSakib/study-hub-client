@@ -19,9 +19,14 @@ const Assignments = () => {
     return (
         <div className='bg-[#F8F8F8]'>
             <div className='w-10/12 mx-auto'>
-            <div className='grid lg:grid-cols-3 gap-5 py-5'>
+            <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 py-5'>
                 {
-                    assignments?.map(assignment => <AssignmentCard key={assignment._id} assignment={assignment}></AssignmentCard>)
+                    assignments?.map(assignment => <AssignmentCard 
+                    key={assignment._id} 
+                    assignment={assignment}
+                    allAssignments={fetchAssignmentData}
+                    >
+                    </AssignmentCard>)
                 }
             </div>
         </div>

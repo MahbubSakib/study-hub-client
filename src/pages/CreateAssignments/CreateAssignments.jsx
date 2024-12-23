@@ -4,6 +4,7 @@ import { AuthContext } from "../../provider/AuthProvider";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
+import { toast } from 'react-hot-toast'
 
 const CreateAssignments = () => {
     const { user } = useContext(AuthContext);
@@ -24,41 +25,29 @@ const CreateAssignments = () => {
         const name = form.name.value;
 
         const newAssignment = { title, description, marks, image, difficulty, due, email, name };
-        
-        const {data} = await axios.post(`${import.meta.env.VITE_SERVER_URL}/add-assignment`, newAssignment);
-        
-        if (data.insertedId) {
+
+        try {
+            const { data } = await axios.post(`${import.meta.env.VITE_SERVER_URL}/add-assignment`, newAssignment);
+
+            if (data.insertedId) {
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'New assignment created successfully.',
+                    icon: 'success',
+                    confirmButtonText: 'Close'
+                });
+                form.reset();
+            }
+        } catch (error) {
+            console.error('Error creating assignment:', error);
             Swal.fire({
-                title: 'Success!',
-                text: 'New assignment created successfully.',
-                icon: 'success',
+                title: 'Error!',
+                text: error.response?.data?.message || 'Failed to create the assignment. Please try again.',
+                icon: 'error',
                 confirmButtonText: 'Close'
             });
-            form.reset();
         }
-
-
-        // fetch('https://fund-together-server.vercel.app/campaigns', {
-        //     method: 'POST',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(newCampaign)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         // console.log(data);
-        //         if (data.insertedId) {
-        //             Swal.fire({
-        //                 title: 'Success!',
-        //                 text: 'New campaign added successfully.',
-        //                 icon: 'success',
-        //                 confirmButtonText: 'Close'
-        //             });
-        //             form.reset();
-        //         }
-        //     })
-    }
+    };
 
     return (
         <div>
