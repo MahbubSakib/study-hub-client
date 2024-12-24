@@ -37,6 +37,14 @@ const Navbar = () => {
                     {user && (
                         <div className='dropdown dropdown-end z-50'>
                             <div className='flex items-center gap-2'>
+                                <div>
+                                    <button
+                                        onClick={logout}
+                                        className='bg-[#4A4A4A] px-3 py-[6px] rounded-md block text-center'
+                                    >
+                                        Logout
+                                    </button>
+                                </div>
                                 <div
                                     tabIndex={0}
                                     role='button'
@@ -51,13 +59,9 @@ const Navbar = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <button
-                                        onClick={logout}
-                                        className='bg-[#4A4A4A] px-3 py-[6px] rounded-md block text-center'
-                                    >
-                                        Logout
-                                    </button>
+                                    <button className='bg-[#4A4A4A] px-3 py-[6px] rounded-md block text-center'>Pending Assignments</button>
                                 </div>
+
                             </div>
                             <ul
                                 tabIndex={0}

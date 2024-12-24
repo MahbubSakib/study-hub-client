@@ -72,12 +72,12 @@ const AssignmentCard = ({ assignment, allAssignments }) => {
                         </span>
                     </p>
                     <div className="mt-4 flex justify-between items-center">
-                        <button
-                            // onClick={onView}
+                        <Link
+                            to={`/assignmentDetails/${assignment._id}`}
                             className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700 font-medium transition duration-300"
                         >
                             View
-                        </button>
+                        </Link>
                         <Link
                             to={`/assignmentUpdate/${assignment._id}`}
                             className="px-4 py-2 bg-yellow-500 text-white rounded-md hover:bg-yellow-700 font-medium transition duration-300"
