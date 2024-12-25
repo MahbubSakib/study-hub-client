@@ -13,6 +13,7 @@ import PrivateRoute from "./PrivateRoute";
 import AssignmentUpdate from "../pages/Assignments/AssignmentUpdate";
 import AssignmentDetails from "../pages/Assignments/AssignmentDetails";
 import PendingAssignments from "../pages/PendingAssignments/PendingAssignments";
+import Error404 from "../pages/Error/Error404";
 
 const Router = createBrowserRouter([
     {
@@ -61,6 +62,10 @@ const Router = createBrowserRouter([
             },
         ]
     },
+    {
+        path: "*",
+        element: <Error404></Error404>
+    }
 ]);
 
 

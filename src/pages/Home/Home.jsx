@@ -6,7 +6,7 @@ import FAQ from '../../components/FAQ';
 
 const Home = () => {
     return (
-        <div>
+        <div className='dark'>
             <Banner></Banner>
             <Features></Features>
             <FAQ></FAQ>
