@@ -17,14 +17,39 @@ const CreateAssignments = () => {
         const form = e.target;
         const title = form.title.value;
         const description = form.description.value;
-        const marks = form.marks.value;
+        const marks = parseInt(form.marks.value, 10);
         const image = form.image.value;
         const difficulty = form.difficulty.value;
         const due = startDate;
         const email = form.email.value;
-        const name = form.name.value;
 
-        const newAssignment = { title, description, marks, image, difficulty, due, email, name };
+        // Get today's date
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        // marks have to be at least 50
+        if (marks < 50) {
+            Swal.fire({
+                title: 'Error',
+                text: 'Marks must be at least 50.',
+                icon: 'warning',
+                confirmButtonText: 'Close'
+            });
+            return;
+        }
+
+        // due date
+        if (due < today) {
+            Swal.fire({
+                title: 'Error',
+                text: 'Due date cannot be before today.',
+                icon: 'warning',
+                confirmButtonText: 'Close'
+            });
+            return;
+        }
+
+        const newAssignment = { title, description, marks, image, difficulty, due, email };
 
         try {
             const { data } = await axios.post(`${import.meta.env.VITE_SERVER_URL}/add-assignment`, newAssignment);
@@ -48,6 +73,7 @@ const CreateAssignments = () => {
             });
         }
     };
+
 
     return (
         <div>
@@ -141,18 +167,6 @@ const CreateAssignments = () => {
                                     readOnly
                                     className="w-full p-3 border-2 border-slate-300 rounded-lg bg-gray-100 focus:outline-none"
                                     required
-                                />
-                            </div>
-
-                            {/* User Name */}
-                            <div className="flex flex-col">
-                                <label htmlFor="name" className="text-lg font-medium text-gray-700">User Name (Read Only):</label>
-                                <input
-                                    type="text"
-                                    name="name"
-                                    value={user?.displayName}
-                                    readOnly
-                                    className="w-full p-3 border-2 border-slate-300 rounded-lg bg-gray-100 focus:outline-none"
                                 />
                             </div>
                         </div>

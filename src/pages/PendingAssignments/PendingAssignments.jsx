@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { AuthContext } from "../../provider/AuthProvider";
+import { toast } from "react-hot-toast";
 
 const PendingAssignments = () => {
     const [pendingAssignments, setPendingAssignments] = useState([]);
@@ -21,7 +22,7 @@ const PendingAssignments = () => {
     const handleGiveMarkClick = (assignment) => {
         // Check if the assignment belongs to the current user
         if (assignment.userEmail === user.email) {
-            alert("You cannot mark your own assignment!");
+            toast.error("You cannot mark your own assignment!");
             return;
         }
         setSelectedAssignment(assignment);
