@@ -12,6 +12,7 @@ import MyAttemptedAssignments from "../pages/MyAttemptedAssignments/MyAttemptedA
 import PrivateRoute from "./PrivateRoute";
 import AssignmentUpdate from "../pages/Assignments/AssignmentUpdate";
 import AssignmentDetails from "../pages/Assignments/AssignmentDetails";
+import PendingAssignments from "../pages/PendingAssignments/PendingAssignments";
 
 const Router = createBrowserRouter([
     {
@@ -53,6 +54,10 @@ const Router = createBrowserRouter([
             {
                 path: '/my-attempted-assignments',
                 element: <PrivateRoute><MyAttemptedAssignments></MyAttemptedAssignments></PrivateRoute>
+            },
+            {
+                path: '/pending-assignments',
+                element: <PrivateRoute><PendingAssignments></PendingAssignments></PrivateRoute>
             },
         ]
     },

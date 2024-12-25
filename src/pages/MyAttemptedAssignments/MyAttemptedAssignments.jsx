@@ -11,7 +11,7 @@ const MyAttemptedAssignments = () => {
     const [startDate, setStartDate] = useState(new Date());
 
     const fetchSubmittedData = async () => {
-        const { data } = await axios.get(`${import.meta.env.VITE_SERVER_URL}/submitted-assignment/${user.email}`);
+        const { data } = await axios.get(`${import.meta.env.VITE_SERVER_URL}/my-submitted-assignment/${user.email}`);
         setSubmissions(data);
         setStartDate(new Date(data.due));
     }
