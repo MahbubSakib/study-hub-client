@@ -42,6 +42,32 @@ const AssignmentUpdate = () => {
 
         const newAssignment = { title, description, marks, image, difficulty, due, email, name };
 
+        // Get today's date
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        // marks have to be at least 50
+        if (marks < 50) {
+            Swal.fire({
+                title: 'Error',
+                text: 'Marks must be at least 50.',
+                icon: 'warning',
+                confirmButtonText: 'Close'
+            });
+            return;
+        }
+
+        // due date
+        if (due < today) {
+            Swal.fire({
+                title: 'Error',
+                text: 'Due date cannot be before today.',
+                icon: 'warning',
+                confirmButtonText: 'Close'
+            });
+            return;
+        }
+
         try {
             const { data } = await axios.put(`${import.meta.env.VITE_SERVER_URL}/update-assignment/${id}`, newAssignment);
 
