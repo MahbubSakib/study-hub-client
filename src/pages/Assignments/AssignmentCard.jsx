@@ -24,7 +24,7 @@ const AssignmentCard = ({ assignment, allAssignments }) => {
                         if (data.deletedCount > 0) {
                             Swal.fire({
                                 title: "Deleted!",
-                                text: "Your campaign has been deleted.",
+                                text: "The assignment has been deleted.",
                                 icon: "success",
                             });
                             allAssignments();
@@ -33,7 +33,7 @@ const AssignmentCard = ({ assignment, allAssignments }) => {
                         console.error(err);
                         Swal.fire({
                             title: "Error!",
-                            text: "There was an issue deleting the campaign.",
+                            text: "There was an issue deleting the assignment.",
                             icon: "error",
                         });
                     }

@@ -3,15 +3,17 @@ import { AuthContext } from "../../provider/AuthProvider";
 import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const MyAttemptedAssignments = () => {
 
     const { user } = useContext(AuthContext);
     const [submissions, setSubmissions] = useState();
     const [startDate, setStartDate] = useState(new Date());
+    const axiosSecure = useAxiosSecure();
 
     const fetchSubmittedData = async () => {
-        const { data } = await axios.get(`${import.meta.env.VITE_SERVER_URL}/my-submitted-assignment/${user.email}`);
+        const { data } = await axiosSecure.get(`/my-submitted-assignment/${user.email}`);
         setSubmissions(data);
         setStartDate(new Date(data.due));
     }
