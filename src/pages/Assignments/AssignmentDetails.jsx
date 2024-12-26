@@ -1,4 +1,3 @@
-import Swal from "sweetalert2";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import DatePicker from "react-datepicker";
@@ -102,12 +101,12 @@ const AssignmentDetails = () => {
                         <h2 className="text-xl font-semibold mb-4">Submit Assignment</h2>
                         <form
                             onSubmit={(e) => {
-                                e.preventDefault(); // Prevent the default browser form submission
+                                e.preventDefault();
                                 if (!googleDocsLink) {
                                     toast.error("Google Docs Link is required.");
                                     return;
                                 }
-                                handleSubmit(); // Call your form submission logic
+                                handleSubmit();
                             }}
                         >
                             <div className="mb-4">
