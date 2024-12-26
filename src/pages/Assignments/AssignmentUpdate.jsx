@@ -26,7 +26,7 @@ const AssignmentUpdate = () => {
         fetchAssignmentData();
     }, [id]);
 
-    console.log(assignment);
+    // console.log(assignment);
 
     const handleSubmit = async (e) => {
         e.preventDefault();

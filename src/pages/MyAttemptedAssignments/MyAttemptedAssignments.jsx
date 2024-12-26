@@ -21,7 +21,7 @@ const MyAttemptedAssignments = () => {
     useEffect(() => {
         fetchSubmittedData();
     }, []);
-    console.log(submissions);
+    // console.log(submissions);
 
     return (
         <div className="w-10/12 mx-auto my-5">

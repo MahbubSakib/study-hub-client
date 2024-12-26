@@ -14,7 +14,7 @@ const Login = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const emailRef = useRef();
-    console.log(location);
+    // console.log(location);
 
     const handleSubmit = (e) => {
         e.preventDefault();

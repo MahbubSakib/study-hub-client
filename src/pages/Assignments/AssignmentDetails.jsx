@@ -40,7 +40,7 @@ const AssignmentDetails = () => {
             submittedAt: format(new Date(), "P"),
         };
 
-        console.log("Submission Data:", submissionData);
+        // console.log("Submission Data:", submissionData);
 
         axios.post(`${import.meta.env.VITE_SERVER_URL}/add-submission`, submissionData)
           .then(response => {
