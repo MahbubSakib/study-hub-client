@@ -36,12 +36,12 @@ const PendingAssignments = () => {
                 marks,
                 feedback
             });
-            alert("Marks submitted successfully!");
+            toast.success("Marks submitted successfully!");
             setSelectedAssignment(null);
             fetchPendingAssignments();
         } catch (error) {
             console.error(error);
-            alert("Error while submitting marks.");
+            toast.error("Error while submitting marks.");
         }
     };
 

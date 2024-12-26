@@ -104,7 +104,7 @@ const AssignmentDetails = () => {
                             onSubmit={(e) => {
                                 e.preventDefault(); // Prevent the default browser form submission
                                 if (!googleDocsLink) {
-                                    alert("Google Docs Link is required.");
+                                    toast.error("Google Docs Link is required.");
                                     return;
                                 }
                                 handleSubmit(); // Call your form submission logic
