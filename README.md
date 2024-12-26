@@ -1,8 +1,29 @@
-# React + Vite
+# Study Hub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Study Hub is an interactive web application designed to share assignment, management them, check others assignment and mark them.
 
-Currently, two official plugins are available:
+## Live URL
+[Study Hub Live](https://study-hub-483c1.web.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Purpose
+The purpose of Study Hub is to provide students with an easy-to-use platform to manage assignments, track progress, and engage in collaborative learning activities.
+
+## Key Features
+- **Collaborative Learning**: Connect with peers and share knowledge to tackle challenges together.
+- **Assignment Tracking**: Manage and track assignments with detailed views and updates.
+- **Difficulty Level Filters**: Filter assignments based on difficulty levels (Easy, Medium, Hard).
+- **Search Assignments**: Search assignments by title or description.
+- **Assignment Grading**: Grade and review assignments submitted by peers.
+- **Pagination**: View assignments with pagination for better data navigation.
+
+## NPM Packages Used
+Below is a list of npm packages used in this project:
+- **React**: For building the user interface.
+- **Axios**: For handling API requests.
+- **React Router**: For routing and navigation.
+- **Tailwind CSS**: For styling and responsive design.
+- **SweetAlert2**: For interactive alerts.
+- **React Hot Toast**: For toast notifications.
+- **MongoDB**: For database management (via backend).
+- **Express.js**: For backend server.
+- **Dotenv**: For environment variable management.
