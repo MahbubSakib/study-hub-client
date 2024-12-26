@@ -95,15 +95,18 @@ const Navbar = () => {
                             </ul>
                         </div>
                     )}
-                    <div className="ml-3">
-                        <Link
-                            to="/pending-assignments"
-                            className="bg-white text-black px-3 py-[6px] rounded-md block text-center"
-                        >
-                            Pending Assignments
-                        </Link>
-                    </div>
+                    {user && (
+                        <div className="ml-3">
+                            <Link
+                                to="/pending-assignments"
+                                className="bg-white text-black px-3 py-[6px] rounded-md block text-center"
+                            >
+                                Pending Assignments
+                            </Link>
+                        </div>
+                        )}
                 </div>
+                    
 
                 {/* Mobile Menu Toggle */}
                 <button
