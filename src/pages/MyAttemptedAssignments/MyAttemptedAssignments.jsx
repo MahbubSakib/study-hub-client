@@ -26,7 +26,7 @@ const MyAttemptedAssignments = () => {
     return (
         <div className="w-10/12 mx-auto my-5">
         <h2 className="text-xl font-semibold text-center mb-5">My Attempted Assignments</h2>
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto min-h-[50vh]">
                 <table className="table">
                     {/* head */}
                     <thead>
