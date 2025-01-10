@@ -6,7 +6,9 @@ const MainLayout = () => {
     return (
         <div className='font-inter'>
             <Navbar></Navbar>
-            <Outlet></Outlet>
+            <div className='pt-[64px] '>
+                <Outlet></Outlet>
+            </div>
             <Footer></Footer>
         </div>
     );

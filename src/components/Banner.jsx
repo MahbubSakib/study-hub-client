@@ -16,7 +16,7 @@ const Banner = () => {
                     pagination={{ clickable: true }}
                     autoplay={{ delay: 3000, disableOnInteraction: false }}
                     loop
-                    className="w-full bg-center bg-cover h-[540px]"
+                    className="w-full bg-center bg-cover h-[440px]"
                 >
                     <SwiperSlide>
                         <div className="relative w-full h-full">

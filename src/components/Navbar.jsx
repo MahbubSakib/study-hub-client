@@ -7,6 +7,7 @@ const Navbar = () => {
     const { user, logout } = useContext(AuthContext);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
+    const [isScrolled, setIsScrolled] = useState(false);
 
     const handleToggle = (e) => {
         if (e.target.checked) {
@@ -14,7 +15,7 @@ const Navbar = () => {
         } else {
             setTheme("light");
         }
-    }
+    };
 
     useEffect(() => {
         localStorage.setItem("theme", theme);
@@ -22,13 +23,25 @@ const Navbar = () => {
         document.querySelector("html").setAttribute("data-theme", localTheme);
     }, [theme]);
 
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 0);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
-        <div className="bg-[#4A90E2]">
+        <div className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-opacity-80 bg-[#4A90E2]' : 'bg-[#4A90E2]'}`}>
             <div className="navbar shadow-sm text-[#F8F8F8] w-10/12 mx-auto flex items-center justify-between">
                 {/* Logo Section */}
                 <div className="flex-1">
                     <Link to="/" className="flex gap-2 items-center">
-                        <img className="w-auto h-7" src={logo} alt="" />
+                        <img className="w-auto h-7" src={logo} alt="Logo" />
                         <span className="font-bold text-xl">StudyHub</span>
                     </Link>
                 </div>
@@ -104,9 +117,8 @@ const Navbar = () => {
                                 Pending Assignments
                             </Link>
                         </div>
-                        )}
+                    )}
                 </div>
-                    
 
                 {/* Mobile Menu Toggle */}
                 <button

@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import auth from "../../Firebase/firebase.init";
 import { AuthContext } from "../../provider/AuthProvider";
+import registerImg from "../../assets/register.png"
 
 const Register = () => {
     const googleProvider = new GoogleAuthProvider();
@@ -85,11 +86,11 @@ const Register = () => {
     };
 
     return (
-        <div className="bg-[#F8F8F8] text-[#4A4A4A]">
-            <div className="min-h-screen">
-                <div className="w-10/12 mx-auto pb-10">
+        <div className="bg-[#F8F8F8] text-[#4A4A4A] min-h-screen flex items-center justify-center">
+            <div className="w-10/12 mx-auto flex flex-wrap lg:flex-nowrap items-center">
+                <div className="w-full lg:w-1/2">
                     <h2 className="text-3xl text-[#4A4A4A] font-bold text-center py-10">Register</h2>
-                    <div className="card bg-base-100 max-w-sm shrink-0 shadow-2xl flex justify-center items-center w-10/12 mx-auto">
+                    <div className="card bg-base-100 max-w-sm shrink-0 shadow-2xl flex justify-center items-center w-10/12 mx-auto mb-9">
                         <form onSubmit={handleSubmit} className="card-body">
                             <div className="form-control">
                                 <label className="label">
@@ -138,6 +139,9 @@ const Register = () => {
                             Already have an account? <NavLink to={'/login'}><span className="text-blue-800 hover:text-red-500">Login</span></NavLink>
                         </button>
                     </div>
+                </div>
+                <div className="w-full lg:w-1/2 p-5 flex justify-center">
+                    <img src={registerImg} alt="Login" className="max-w-full h-auto" />
                 </div>
             </div>
         </div>
