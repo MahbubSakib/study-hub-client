@@ -1,12 +1,25 @@
 import axios from 'axios';
-import React from 'react';
+import React, { useContext } from 'react';
 import { toast } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../../provider/AuthProvider';
 
 const AssignmentCard = ({ assignment, allAssignments }) => {
+    const {user} = useContext(AuthContext);
 
     const handleDelete = async id => {
+        if (!user) {
+            Swal.fire({
+                title: "Not Logged In",
+                text: "You need to log in to delete an assignment.",
+                icon: "warning",
+                confirmButtonColor: "#3085d6",
+                confirmButtonText: "OK",
+            });
+            return;
+        }
+    
         try {
             Swal.fire({
                 title: "Are you sure?",
@@ -20,7 +33,6 @@ const AssignmentCard = ({ assignment, allAssignments }) => {
                 if (result.isConfirmed) {
                     try {
                         const { data } = await axios.delete(`${import.meta.env.VITE_SERVER_URL}/assignment/${id}`);
-                        // console.log(data);
                         if (data.deletedCount > 0) {
                             Swal.fire({
                                 title: "Deleted!",
@@ -30,7 +42,6 @@ const AssignmentCard = ({ assignment, allAssignments }) => {
                             allAssignments();
                         }
                     } catch (err) {
-                        console.error(err);
                         Swal.fire({
                             title: "Error!",
                             text: "There was an issue deleting the assignment.",
@@ -40,10 +51,10 @@ const AssignmentCard = ({ assignment, allAssignments }) => {
                 }
             });
         } catch (err) {
-            // console.log(err);
             toast.error(err.message);
         }
-    }
+    };
+    
 
     return (
         <div>
