@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { easeInOut } from "motion";
 
 const Features = () => {
+    // features
     const features = [
         {
             icon: <FaUsers />,
