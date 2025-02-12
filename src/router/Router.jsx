@@ -14,6 +14,7 @@ import AssignmentUpdate from "../pages/Assignments/AssignmentUpdate";
 import AssignmentDetails from "../pages/Assignments/AssignmentDetails";
 import PendingAssignments from "../pages/PendingAssignments/PendingAssignments";
 import Error404 from "../pages/Error/Error404";
+import About from "../pages/About/About";
 
 const Router = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ const Router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>
+            },
+            {
+                path: '/about-us',
+                element: <About></About>
             },
             {
                 path: '/assignments',
