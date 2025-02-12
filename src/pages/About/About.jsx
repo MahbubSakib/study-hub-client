@@ -9,8 +9,8 @@ const About = () => {
                 </h1>
                 <p className="text-lg text-gray-700 text-center mb-4">
                     Welcome to <span className="font-semibold">Study Hub</span> – your all-in-one platform for interactive and collaborative learning. We believe education should be{" "}
-                    <span className="text-blue-500 font-semibold">engaging, organized, and accessible</span>, empowering students to{" "}
-                    <span className="text-blue-500 font-semibold">track progress, manage assignments, and collaborate effortlessly</span>.
+                    engaging, organized, and accessible, empowering students to{" "}
+                    track progress, manage assignments, and collaborate effortlessly.
                 </p>
 
                 <h2 className="text-2xl font-semibold text-gray-800 mt-6">
@@ -18,7 +18,7 @@ const About = () => {
                 </h2>
                 <p className="text-lg text-gray-700 mt-2">
                     Our mission is to simplify academic management by providing powerful tools for students to{" "}
-                    <span className="font-semibold text-blue-500">track, review, and improve their learning journey.</span> Whether you're working on assignments, grading peer submissions, or collaborating with classmates, Study Hub makes the process seamless and efficient.
+                    track, review, and improve their learning journey. Whether you're working on assignments, grading peer submissions, or collaborating with classmates, Study Hub makes the process seamless and efficient.
                 </p>
 
                 <h2 className="text-2xl font-semibold text-gray-800 mt-6">
@@ -49,7 +49,7 @@ const About = () => {
                     📚 Join the Study Hub Community!
                 </h2>
                 <p className="text-lg text-gray-700 mt-2">
-                    Whether you're a student looking to <span className="text-blue-500 font-semibold">streamline your study workflow</span> or a learner eager to <span className="text-blue-500 font-semibold">engage with others</span>, <span className="font-semibold">Study Hub</span> is here to help.
+                    Whether you're a student looking to streamline your study workflow or a learner eager to engage with others, <span className="font-semibold">Study Hub</span> is here to help.
                 </p>
 
                 <p className="text-xl font-bold text-center text-blue-600 mt-6">
