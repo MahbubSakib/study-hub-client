@@ -39,7 +39,7 @@ const Assignments = () => {
             <div className="w-10/12 mx-auto py-5">
                 <div className="flex flex-col md:flex-row items-center justify-between mb-5">
                     <select
-                        className="p-2 border rounded-md mb-3 md:mb-0"
+                        className="p-2 border-2 rounded-md mb-3 md:mb-0"
                         value={difficulty}
                         onChange={(e) => setDifficulty(e.target.value)}
                     >
@@ -52,7 +52,7 @@ const Assignments = () => {
                     <input
                         type="text"
                         placeholder="Search assignments..."
-                        className="p-2 border rounded-md"
+                        className="p-2 border-2 rounded-md"
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
                     />
